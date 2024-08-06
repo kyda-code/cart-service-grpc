@@ -12,7 +12,7 @@ This project is a gRPC-based Cart Service implemented in Go. It allows clients t
 
 1. **Clone the repository**:
    ```sh
-   git clone https://github.com/yourusername/cart-service.git
+   git clone https://github.com/kyda-code/cart-service-grpc
    cd cart-service
    ```
 
