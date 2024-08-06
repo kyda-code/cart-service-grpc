@@ -1,4 +1,3 @@
-```markdown
 # Cart Service
 
 This project is a gRPC-based Cart Service implemented in Go. It allows clients to manage a shopping cart by adding, removing items, and retrieving the cart details.
