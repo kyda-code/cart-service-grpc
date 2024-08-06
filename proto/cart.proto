@@ -1,18 +1,22 @@
 syntax = "proto3";
 
 package cart;
+option go_package = "proto/cart";
 
+// CartService is a service for managing a shopping cart.
 service CartService {
   rpc AddItem(AddItemRequest) returns (AddItemResponse) {}
   rpc RemoveItem(RemoveItemRequest) returns (RemoveItemResponse) {}
   rpc GetCart(GetCartRequest) returns (GetCartResponse) {}
 }
 
+// Cart represents a shopping cart.
 message Cart {
   string id = 1;
   repeated Item items = 2;
 }
 
+//  Item represents an item in a shopping cart.
 message Item {
   string id = 1;
   string name = 2;
@@ -20,28 +24,34 @@ message Item {
   float price = 4;
 }
 
+//  AddItemRequest represents a request to add an item to a cart.
 message AddItemRequest {
   string cart_id = 1;
   Item item = 2;
 }
 
+//  AddItemResponse represents a response to adding an item to a cart.
 message AddItemResponse {
   Cart cart = 1;
 }
 
+//  RemoveItemRequest represents a request to remove an item from a cart.
 message RemoveItemRequest {
   string item_id = 1;
   string cart_id = 2;
 }
 
+//  RemoveItemResponse represents a response to removing an item from a cart.
 message RemoveItemResponse {
   Cart cart = 1;
 }
 
+//  GetCartRequest represents a request to get a cart.
 message GetCartRequest {
   string cart_id = 1;
 }
 
+//  GetCartResponse represents a response to getting a cart.
 message GetCartResponse {
   Cart cart = 1;
 }
